@@ -37,6 +37,7 @@ class Program
             }
         }
     }
+<<<<<<< HEAD
     static void AddPassword()
     {
         Console.Write("Enter account name: ");
@@ -49,5 +50,20 @@ class Program
         passwordVault[account] = encryptedPassword;
 
         Console.WriteLine($"Password for '{account}' added.");
+=======
+    static void ViewPasswords()
+    {
+        if (passwordVault.Count == 0)
+        {
+            Console.WriteLine("No passwords saved.");
+            return;
+        }
+
+        foreach (var entry in passwordVault)
+        {
+            string decryptedPassword = DecryptPassword(entry.Value);
+            Console.WriteLine($"Account: {entry.Key}, Password: {decryptedPassword}");
+        }
+>>>>>>> view
     }
 }
